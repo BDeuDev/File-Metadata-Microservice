@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const multer = require('multer');
-const upload = multer({ storage: multer.memoryStorage() })
+const upload = multer({ storage: multer.memoryStorage() });
 
 router.post('/upload', upload.single('upfile'), (req, res) => {
     if (!req.file) {
@@ -15,5 +15,4 @@ router.post('/upload', upload.single('upfile'), (req, res) => {
     });
 });
 
-
-module.exports = router
+module.exports = router;
