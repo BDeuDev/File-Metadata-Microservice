@@ -8,7 +8,7 @@ router.post('/upload', upload.single('upfile'), (req, res) => {
         return res.status(400).json({ error: 'No file uploaded' });
     }
     const { originalname, mimetype, size } = req.file;
-    res.json({
+    res.status(200).json({
         name: originalname,
         type: mimetype,
         size: size
